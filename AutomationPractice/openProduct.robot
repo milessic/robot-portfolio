@@ -15,6 +15,8 @@ Open Page
   Wait Until Element Is Visible    //*[@id="center_column"]/ul/li/div/div[1]/div/a[1]/img
   Click Element    //*[@id="center_column"]/ul/li/div/div[2]/h5/a
   Wait Until Element Is Visible    id=add_to_cart
-    
+Adding product to the cart
+  Click Element    id=add_to_cart
+  Wait Until Element Is Visible    id=icon-chevron-right right
 
 *** Keywords ***
