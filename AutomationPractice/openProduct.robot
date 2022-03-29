@@ -16,7 +16,11 @@ Open Page
   Click Element    //*[@id="center_column"]/ul/li/div/div[2]/h5/a
   Wait Until Element Is Visible    id=add_to_cart
 Adding product to the cart
-  Click Element    id=add_to_cart
+  # use keywords were possible
+  Add Product
   Wait Until Element Is Visible    id=icon-chevron-right right
 
 *** Keywords ***
+Add Product
+    Wait Until Element Is Visible    id=add_to_cart
+    Click Element    id=add_to_cart  
