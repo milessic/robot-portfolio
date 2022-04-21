@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.4 on darwin)" generated="20220421 11:04:30.750" rpa="false" schemaversion="3">
+<suite id="s1" name="Amazon" source="/Users/Miles/Documents/GitHub/robot-tests/Course/course1/Tests/amazon.robot">
+<test id="s1-t1" name="User can use Serach" line="11">
+<kw name="Begin Web Test" library="common">
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>about:blank</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220421 11:04:30.998" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220421 11:04:30.997" endtime="20220421 11:04:32.782"/>
+</kw>
+<status status="PASS" starttime="20220421 11:04:30.996" endtime="20220421 11:04:32.782"/>
+</kw>
+<kw name="Search For Products" library="amazon.web.gui">
+<arg>${IMAGE}</arg>
+<kw name="Go To" library="Selenium2Library">
+<arg>https://amazon.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220421 11:04:32.786" level="INFO">Opening url 'https://amazon.com'</msg>
+<status status="PASS" starttime="20220421 11:04:32.785" endtime="20220421 11:04:36.081"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>id=twotabsearchtextbox</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220421 11:04:36.082" endtime="20220421 11:04:36.164"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>id=twotabsearchtextbox</arg>
+<arg>LEGO Porsche 911 (10295) Model Building Kit; Engaging Building Project for Adults; Build and Display The Iconic Porsche 911</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220421 11:04:36.165" level="INFO">Typing text 'LEGO Porsche 911 (10295) Model Building Kit; Engaging Building Project for Adults; Build and Display The Iconic Porsche 911' into text field 'id=twotabsearchtextbox'.</msg>
+<status status="PASS" starttime="20220421 11:04:36.164" endtime="20220421 11:04:36.836"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>nav-search-submit-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220421 11:04:36.837" level="INFO">Clicking button 'nav-search-submit-button'.</msg>
+<status status="PASS" starttime="20220421 11:04:36.836" endtime="20220421 11:04:41.066"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${image}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220421 11:04:41.066" endtime="20220421 11:04:41.110"/>
+</kw>
+<status status="PASS" starttime="20220421 11:04:32.783" endtime="20220421 11:04:41.110"/>
+</kw>
+<kw name="Select Product From Search Results" library="amazon.web.gui">
+<arg>${IMAGE}</arg>
+<kw name="Click Image" library="Selenium2Library">
+<arg>${image}</arg>
+<doc>Clicks an image identified by ``locator``.</doc>
+<msg timestamp="20220421 11:04:41.111" level="INFO">Clicking image '//*[@id="search"]/div[1]/div[1]/div/span[3]/div[2]/div[3]/div/div/div/div/div[1]/span/a/div/img[1]'.</msg>
+<status status="PASS" starttime="20220421 11:04:41.111" endtime="20220421 11:04:45.102"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>buy-now-button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220421 11:04:45.103" endtime="20220421 11:04:45.152"/>
+</kw>
+<status status="PASS" starttime="20220421 11:04:41.110" endtime="20220421 11:04:45.152"/>
+</kw>
+<kw name="Buy Product And Begin Checkout" library="amazon.web.gui">
+<kw name="Click Button" library="Selenium2Library">
+<arg>buy-now-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220421 11:04:45.153" level="INFO">Clicking button 'buy-now-button'.</msg>
+<status status="PASS" starttime="20220421 11:04:45.152" endtime="20220421 11:04:47.487"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>id=ap_email</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220421 11:04:47.487" endtime="20220421 11:04:47.507"/>
+</kw>
+<status status="PASS" starttime="20220421 11:04:45.152" endtime="20220421 11:04:47.507"/>
+</kw>
+<kw name="End Web Test" library="common">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220421 11:04:47.508" endtime="20220421 11:04:47.702"/>
+</kw>
+<status status="PASS" starttime="20220421 11:04:47.507" endtime="20220421 11:04:47.702"/>
+</kw>
+<doc>To use search</doc>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20220421 11:04:30.994" endtime="20220421 11:04:47.703"/>
+</test>
+<doc>This is a test for validating if user has to be logged in to purchase product</doc>
+<status status="PASS" starttime="20220421 11:04:30.753" endtime="20220421 11:04:47.705"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Amazon">Amazon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
