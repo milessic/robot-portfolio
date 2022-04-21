@@ -8,19 +8,20 @@ Test Teardown   End Web Test
 Suite Teardown  Cleanup Testing Data
 *** Variables ***
 ${BROWSER}  chrome
-${IMAGE}    //*[@id="search"]/div[1]/div[1]/div/span[3]/div[2]/div[3]/div/div/div/div/div[1]/span/a/div/img[1]
+${IMAGE}    //*[@id="search"]/div[1]/div[1]/div/span[3]/div[2]/div[3]/div/div/div/div/div[2]/span/a/div/img[1]
+${SEARCH_TEXT}    Porsche 911 Lego
 
 *** Test Cases ***
 User can use Serach
   [Documentation]  To use search
   [Tags]           Smoke
 #  common.Begin Web Test   ${BROWSER}
-  amazon.web.gui.Search For Products   ${IMAGE}
+  amazon.web.gui.Search For Products   ${IMAGE}     ${SEARCH_TEXT}
 #  common.End Web Test
 
 User cannot buy Products without login
   [Documentation]   To verify if user has to be logged in to buy products
   [Tags]           Smoke
-  amazon.web.gui.Search For Products   ${IMAGE}
+  amazon.web.gui.Search For Products   ${IMAGE}    ${SEARCH_TEXT}
   amazon.web.gui.Select Product From Search Results    ${IMAGE}
   amazon.web.gui.Buy Product And Begin Checkout

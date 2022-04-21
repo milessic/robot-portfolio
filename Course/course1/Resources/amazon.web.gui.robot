@@ -1,18 +1,16 @@
 *** Settings ***
-Library   Selenium2Library
+Resource    /Users/Miles/Documents/GitHub/robot-tests/Course/course1/Resources/PO/PO.resources.robot
 
 *** Keywords ***
-Search For Products    [Arguments]    ${image}
-  Go To    https://amazon.com
-  Wait Until Element Is Visible    id=twotabsearchtextbox
-  Input Text    id=twotabsearchtextbox    LEGO Porsche 911 (10295) Model Building Kit; Engaging Building Project for Adults; Build and Display The Iconic Porsche 911
-  Click Button    nav-search-submit-button
-  Wait Until Element Is Visible    ${image}
+Search For Products    [Arguments]    ${image}    ${search_text}
+  LandingPage.Load
+  LandingPage.Verify Page Loaded
+  TopNav.Search for product   ${search_text}
+  SearchResults.Verify Product Searched   ${image}
 
 Select Product From Search Results    [Arguments]    ${image}
-  Click Image    ${image}
-  Wait Until Element Is Visible    buy-now-button
+  SearchResults.Select Product From Search Results    ${image}
 
 Buy Product And Begin Checkout
-  Click Button    buy-now-button
-  Wait Until Element Is Visible    id=ap_email
+  Product.Buy Product
+  SignIn.Verify Page Contains Email Field
