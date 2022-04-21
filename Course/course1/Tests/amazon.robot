@@ -3,25 +3,26 @@ Documentation   This is a test for validating if user has to be logged in to pur
 Resource    /Users/Miles/Documents/GitHub/robot-tests/Course/course1/Resources/amazon.web.gui.robot
 Resource    /Users/Miles/Documents/GitHub/robot-tests/Course/course1/Resources/common.robot
 Suite Setup     Insert Testing Data
-Test Setup      Begin Web Test  ${BROWSER}
+Test Setup      Begin Web Test
 Test Teardown   End Web Test
 Suite Teardown  Cleanup Testing Data
 *** Variables ***
-${BROWSER}  chrome
-${IMAGE}    //*[@id="search"]/div[1]/div[1]/div/span[3]/div[2]/div[3]/div/div/div/div/div[2]/span/a/div/img[1]
-${SEARCH_TEXT}    Porsche 911 Lego
+${BROWSER}  headlesschrome
+${IMAGE}     //*[@id="search"]/div[1]/div[1]/div/span[3]/div[2]/div[3]/div/div/div/div/div[1]/span/a/div/img[1]
+${SEARCH_TERM}    LEGO Porsche 911 (10295) Model Building Kit; Engaging Building Project for Adults; Build and Display The Iconic Porsche
 
 *** Test Cases ***
-User can use Serach
-  [Documentation]  To use search
+Logged out user should be able to search for a Product
   [Tags]           Smoke
-#  common.Begin Web Test   ${BROWSER}
-  amazon.web.gui.Search For Products   ${IMAGE}     ${SEARCH_TEXT}
-#  common.End Web Test
+  amazon.web.gui.Search For Products
 
-User cannot buy Products without login
-  [Documentation]   To verify if user has to be logged in to buy products
+Logged out user should be able to view a Product
   [Tags]           Smoke
-  amazon.web.gui.Search For Products   ${IMAGE}    ${SEARCH_TEXT}
-  amazon.web.gui.Select Product From Search Results    ${IMAGE}
+  amazon.web.gui.Search For Products
+  amazon.web.gui.Select Product From Search Results
+
+Logged out user should not be able to buy product
+  [Tags]           Smoke
+  amazon.web.gui.Search For Products
+  amazon.web.gui.Select Product From Search Results
   amazon.web.gui.Buy Product And Begin Checkout

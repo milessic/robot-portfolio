@@ -1,9 +1,9 @@
 *** Settings ***
 Library  Selenium2Library
 
+*** Variables ***
+${PRODUCT_BUY_NOW}    buy-now-button
+
 *** Keywords ***
 Buy Product
-  Click Button    buy-now-button
-
-Verify Page Contains Email Field
-  Wait Until Element Is Visible    id=ap_email
+  Click Button        ${PRODUCT_BUY_NOW}

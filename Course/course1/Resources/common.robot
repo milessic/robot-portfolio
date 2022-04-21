@@ -3,8 +3,8 @@ Library    Selenium2Library
 
 
 *** Keywords ***
-Begin Web Test    [Arguments]    ${browser}
-  Open Browser    about:blank    ${browser}
+Begin Web Test
+  Open Browser    about:blank    ${BROWSER}
 
 End Web Test
   Close Browser
