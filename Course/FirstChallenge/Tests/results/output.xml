@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.4 on darwin)" generated="20220506 23:43:00.678" rpa="false" schemaversion="3">
+<suite id="s1" name="Challenge1" source="/Users/Miles/Documents/GitHub/robot-tests/Course/FirstChallenge/Tests/challenge1.robot">
+<test id="s1-t1" name="Open BROWSER" line="13">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220506 23:43:00.914" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220506 23:43:00.914" endtime="20220506 23:43:02.678"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${URL}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220506 23:43:02.679" level="INFO">/Users/Miles/Documents/GitHub/robot-tests/Course/FirstChallenge/site/index.html</msg>
+<status status="PASS" starttime="20220506 23:43:02.679" endtime="20220506 23:43:02.680"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Nice</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220506 23:43:02.680" level="INFO">Nice</msg>
+<status status="PASS" starttime="20220506 23:43:02.680" endtime="20220506 23:43:02.680"/>
+</kw>
+<status status="PASS" starttime="20220506 23:43:00.913" endtime="20220506 23:43:02.681"/>
+</test>
+<status status="PASS" starttime="20220506 23:43:00.681" endtime="20220506 23:43:02.683"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Challenge1">Challenge1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

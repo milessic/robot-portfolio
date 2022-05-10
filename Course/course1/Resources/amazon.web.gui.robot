@@ -14,3 +14,6 @@ Select Product From Search Results
 Buy Product And Begin Checkout
   Product.Buy Product
   SignIn.Verify Page Contains Email Field
+
+Login      [Arguments]    ${login}    ${password}
+  SignIn.Login     ${login}   ${password}
