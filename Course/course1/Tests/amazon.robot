@@ -7,9 +7,9 @@ Test Setup      Begin Web Test
 Test Teardown   End Web Test
 Suite Teardown  Cleanup Testing Data
 *** Variables ***
-${BROWSER}  headlesschrome
-${IMAGE}     //*[@id="search"]/div[1]/div[1]/div/span[3]/div[2]/div[3]/div/div/div/div/div[1]/span/a/div/img[1]
-${SEARCH_TERM}    LEGO Porsche 911 (10295) Model Building Kit; Engaging Building Project for Adults; Build and Display The Iconic Porsche
+${BROWSER}          headlesschrome
+${IMAGE}            //*[@id="search"]/div[1]/div[1]/div/span[3]/div[2]/div[3]/div/div/div/div/div[1]/span/a/div/img[1]
+${SEARCH_TERM}      LEGO Porsche 911 (10295) Model Building Kit; Engaging Building Project for Adults; Build and Display The Iconic Porsche
 ${LOGIN_EMAIL}      msictestqa2@gmail.com
 ${LOGIN_PASSWORD}   Robot!23
 
