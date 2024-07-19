@@ -34,7 +34,7 @@ Create Multiple Inputs
 		Type In Input	${texts}[${i}]  	${i}
 	END
 
-Change Input Type And Input
+Change Input Type And Fill It
 	Open Input Types Page		headless=${HEADLESS}
 	Change Input Type    	    ${0}	email
 	Verify Input Type Is  	    ${0}    email
