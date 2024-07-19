@@ -3,3 +3,5 @@
 /**/output.xml
 *.png
 *.jp*g
+**/__pycache__/**
+**/playwright-log.txt
